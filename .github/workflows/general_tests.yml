@@ -40,14 +40,6 @@ jobs:
         push: false
         provenance: false
 
-    - name: prepare build environment
+    - name: prepare build
       run: |
-         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace && source poky/oe-init-build-env"
-
-    - name: patch conf file
-      run: |
-         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace && echo "MACHINE ?= \"beaglebone-yocto\"" >> ./build/conf/local.conf2 && cat ./build/conf/local.conf >> ./build/conf/local.conf2 && mv -f ./build/conf/local.conf2 ./build/conf/local.conf && cat ./build/conf/local.conf"
-
-    - name: prepare build environment
-      run: |
-         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace && source poky/oe-init-build-env && bitbake core-image-x11 && find . -name \"*.wic\""
+         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace && source poky/oe-init-build-env && echo "MACHINE ?= \"beaglebone-yocto\"" >> ./conf/local.conf2 && cat ./conf/local.conf >> ./conf/local.conf2 && mv -f ./conf/local.conf2 ./conf/local.conf && cat ./conf/local.conf && bitbake core-image-x11 && find . -name \"*.wic\""
