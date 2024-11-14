@@ -46,4 +46,4 @@ jobs:
 
     - name: patch conf file
       run: |
-         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace && cat ./build/conf/local.conf | sed -e "s/#MACHINE ?= \"beaglebone-yocto\"/MACHINE ?= \"beaglebone-yocto\"/" > ./build/conf/local.conf && cat ./build/conf/local.conf"
+         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace && echo "#MACHINE ?= \"beaglebone-yocto\"" >> ./build/conf/local.conf2 && cat ./build/conf/local.conf >> ./build/conf/local.conf2 && mv -f ./build/conf/local.conf2 ./build/conf/local.conf && cat ./build/conf/local.conf"
