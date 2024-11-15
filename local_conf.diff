@@ -1,0 +1,11 @@
+--- local.conf	2024-11-15 09:23:23.516785278 +0000
++++ local.conf	2024-11-15 09:31:04.412549091 +0000
+@@ -29,7 +29,7 @@
+ # There are also the following hardware board target machines included for 
+ # demonstration purposes:
+ #
+-#MACHINE ?= "beaglebone-yocto"
++MACHINE ?= "beaglebone-yocto"
+ #MACHINE ?= "genericx86"
+ #MACHINE ?= "genericx86-64"
+ #MACHINE ?= "edgerouter"
