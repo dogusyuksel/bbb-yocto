@@ -42,4 +42,6 @@ jobs:
 
     - name: prepare build
       run: |
-         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace && source poky/oe-init-build-env && cat ./conf/local.conf | sed -e \"s/#MACHINE ?= \"beaglebone-yocto\"/MACHINE ?= \"beaglebone-yocto\"/\" > ./conf/local.conf && cat ./conf/local.conf && bitbake core-image-x11 && find . -name \"*.wic\""
+        ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && source poky/oe-init-build-env'
+        ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace/build && echo \'MACHINE ?= "beaglebone-yocto"\' >> dodo.txt && cat ./conf/local.conf >> dodo.txt && mv -f dodo.txt ./conf/local.conf'
+        ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master "cd /workspace/build && bitbake core-image-x11 && find . -name \"*.wic\""
