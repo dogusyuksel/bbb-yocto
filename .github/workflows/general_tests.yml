@@ -44,4 +44,5 @@ jobs:
       run: |
         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && source poky/oe-init-build-env'
         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && cp -rf local_conf.diff build/conf && cd build/conf && patch local.conf < local_conf.diff && cat local.conf'
+        ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && cp -rf sanity_conf.diff poky/meta/conf && cd poky/meta/conf && patch sanity.conf < sanity_conf.diff && cat sanity.conf'
         ./docker/run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace/build && bitbake core-image-x11 && find . -name "*.wic"'
