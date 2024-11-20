@@ -1,9 +1,0 @@
---- sanity.conf	2024-11-14 15:46:35.630913378 +0000
-+++ sanity.conf	2024-11-15 11:28:24.854152271 +0000
-@@ -12,5 +12,5 @@
- LAYER_CONF_VERSION ?= "7"
- SITE_CONF_VERSION  ?= "1"
- 
--INHERIT += "sanity"
-+#INHERIT += "sanity"
- 
