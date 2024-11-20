@@ -1,0 +1,1 @@
+docs/angstrom/BBB-eMMC-flasher-2013.09.04.img.xz filter=lfs diff=lfs merge=lfs -text
