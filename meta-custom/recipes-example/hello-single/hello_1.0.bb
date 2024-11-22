@@ -1,4 +1,4 @@
-DESCRIPTION = "RTOS MUTEX Example"
+DESCRIPTION = "Simple helloworld example in C"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://helloworld.c"
@@ -10,6 +10,6 @@ do_compile() {
 }
 
 do_install() {
-	install -d ${D}/${bindir}
-	install -m 0755 ${S}/helloworld ${D}/${bindir}
+	install -d ${D}${bindir}
+	install -m 0755 ${S}/helloworld ${D}${bindir}
 }

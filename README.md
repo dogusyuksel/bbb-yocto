@@ -44,3 +44,5 @@ ncdu -x /
 [examples of coding in bbb](https://github.com/GavinStrunk?tab=repositories)
 
 [prebuild distors](https://www.beagleboard.org/distros)
+
+[hardware design documentations](https://git.beagleboard.org/beagleboard/beaglebone-black)
