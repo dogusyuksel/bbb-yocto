@@ -17,7 +17,7 @@ apt-get install ncdu
 ncdu -x /
 ```
 
-# USerful Commands
+# Useful Commands
 
 * bitbake-layers create-layer ../poky/meta-custom
 * bitbake-layers add-layer ../poky/meta-custom
