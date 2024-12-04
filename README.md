@@ -17,6 +17,13 @@ apt-get install ncdu
 ncdu -x /
 ```
 
+Below can be used to skip root check
+
+```
+INHERIT:remove = "sanity"
+```
+
+
 # Useful Commands
 
 * bitbake-layers create-layer ../poky/meta-custom
