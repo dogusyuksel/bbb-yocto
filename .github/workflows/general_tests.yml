@@ -47,8 +47,8 @@ jobs:
 
     - name: prepare build
       run: |
-        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /thirdparty && source poky/oe-init-build-env'
-        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /thirdparty && cp -rf /workspace/local_conf.diff build/conf && cd build/conf && patch local.conf < local_conf.diff && cat local.conf'
-        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /build && bitbake-layers add-layer /workspace/meta-custom && bitbake-layers show-recipes hello'
-        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /build && bitbake hello && ls -l ./tmp/deploy/rpm/cortexa8hf_neon/ | grep hello'
-        echo 'RUN THIS (BUT CANNOT BECAUSE OF MEMORY) ==> cd /build && bitbake core-image-full-cmdline && find . -name "*.wic"'
+        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && source /thirdparty/poky/oe-init-build-env'
+        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && cp -rf local_conf.diff build/conf && cd build/conf && patch local.conf < local_conf.diff && cat local.conf'
+        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace/build && bitbake-layers add-layer /workspace/meta-custom && bitbake-layers show-recipes hello'
+        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace/build && bitbake hello && ls -l ./tmp/deploy/rpm/cortexa8hf_neon/ | grep hello'
+        echo 'RUN THIS (BUT CANNOT BECAUSE OF MEMORY) ==> cd /workspace/build && bitbake core-image-full-cmdline && find . -name "*.wic"'
