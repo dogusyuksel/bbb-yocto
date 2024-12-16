@@ -44,7 +44,7 @@ INHERIT:remove = "sanity"
 
 [meta-beagleboard](https://github.com/beagleboard/meta-beagleboard)
 
-[usefull content about yocto/bbb](https://github.com/Munawar-git/YoctoTutorials/blob/master/00_Yocto_Intro/00-Yocto-Intro.md)
+[usefull content about yocto/bbb](https://github.com/Munawar-git/YoctoTutorials/tree/master)
 
 [examples of coding in bbb](https://github.com/derekmolloy?tab=repositories)
 
