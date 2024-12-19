@@ -22,7 +22,7 @@ jobs:
           version:
             - 'VERSION'
           changelog:
-            - 'CHANGELOG'
+            - 'CHANGELOG.md'
 
     - name: check version and changelog
       if: steps.changes.outputs.version == 'false' || steps.changes.outputs.changelog == 'false'
