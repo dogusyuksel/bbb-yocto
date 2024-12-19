@@ -2,7 +2,6 @@
 *.d
 poky
 build
-docker
 __pycache__
 bitbake-cookerdaemon.log
 pyshtables.py
