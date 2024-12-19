@@ -42,10 +42,6 @@ ENV PATH="${PATH}:/bitbake/bin"
 ENV PYTHONPATH="${PYTHONPATH}:/bitbake/lib"
 RUN pip install -r bitbake/toaster-requirements.txt
 
-RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 && \
-    tar -xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
-ENV PATH="/gcc-arm-none-eabi-10.3-2021.10/bin:${PATH}"
-
 RUN cd / && mkdir thirdparty && cd thirdparty && git clone -b kirkstone git://git.yoctoproject.org/poky.git
 
 CMD ["/bin/bash"]
