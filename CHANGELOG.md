@@ -1,3 +1,7 @@
+## 1.0.1
+
+- simplified Dockerfile a bit
+
 ## 1.0.0
 
 - CHANGELOG.md and VERSION added
